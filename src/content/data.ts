@@ -60,8 +60,8 @@ export const experience: Experience[] = [
     endDate: "Presente",
     bullets: [
       "Lidero la toma de requisitos y el refinamiento técnico trabajando de forma directa con los Product Owners (POs) de una cuenta corporativa de gran escala, asegurando la alineación entre las necesidades de negocio y la viabilidad técnica.",
-      "Diseño y arquitectura de nuevos módulos B2C de alto impacto (sistemas de gamificación, banners dinámicos de promociones y flujos complejos de canjeo de saldos/pagos), aplicando arquitectura por capas.",
-      "Garantizo la entrega de código altamente optimizado (Clean Code), eliminando cuellos de botella algorítmicos y reduciendo la complejidad espacial y temporal en procesos críticos."
+      "Diseño y arquitectura de nuevos módulos B2C de alto impacto (sistemas de gamificación, banners dinámicos de promociones y flujos de canjeo de saldos/pagos), aplicando arquitectura por capas.",
+      "Garantizo la entrega de código optimizado (Clean Code), eliminando cuellos de botella algorítmicos y reduciendo la complejidad espacial y temporal en procesos críticos."
     ]
   },
   {
