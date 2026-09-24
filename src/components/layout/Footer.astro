@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+import { profile } from '../../content/data';
+
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { href: profile.github, icon: 'simple-icons:github', label: 'GitHub' },
+  { href: profile.linkedin, icon: 'simple-icons:linkedin', label: 'LinkedIn' },
+  { href: `mailto:${profile.email}`, icon: 'heroicons:envelope', label: 'Email' }
+];
+---
+
+<footer class="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+  <div class="max-w-5xl mx-auto px-6 py-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-6">
+        {socialLinks.map((link) => (
+          <a 
+            href={link.href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            class="text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+          >
+            <Icon name={link.icon} class="w-6 h-6" />
+          </a>
+        ))}
+      </div>
+      
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        © {currentYear} Sergio Zapata. Todos los derechos reservados.
+      </p>
+    </div>
+    <p class="text-xs text-center text-gray-500 dark:text-gray-600 opacity-50 mt-4">
+      Built with Astro & Tailwind. Zero JS. 100/100 Lighthouse Performance.
+    </p>
+  </div>
+</footer>

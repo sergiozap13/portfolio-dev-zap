@@ -1,0 +1,39 @@
+---
+import { education } from '../../content/data';
+import SectionTitle from '../ui/SectionTitle.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <SectionTitle id="education" title="Educación" />
+
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-8 transition-colors duration-200">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center">
+            <Icon name="heroicons:academic-cap" class="w-6 h-6 text-emerald-500" />
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+              {education.degree}
+            </h3>
+            <p class="text-emerald-700 dark:text-emerald-400 font-semibold mb-3">
+              {education.institution}
+            </p>
+            <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+              <span class="flex items-center gap-1">
+                <Icon name="heroicons:calendar" class="w-4 h-4" />
+                {education.startDate} - {education.endDate}
+              </span>
+              <span class="flex items-center gap-1">
+                <Icon name="heroicons:map-pin" class="w-4 h-4" />
+                {education.location}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

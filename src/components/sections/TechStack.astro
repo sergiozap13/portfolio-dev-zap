@@ -1,0 +1,26 @@
+---
+import { techStack } from '../../content/data';
+import SectionTitle from '../ui/SectionTitle.astro';
+import Badge from '../ui/Badge.astro';
+---
+
+<section class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <SectionTitle id="stack" title="Tech Stack" subtitle="Tecnologías y herramientas que domino" />
+
+    <div class="space-y-8">
+      {Object.entries(techStack).map(([category, technologies]) => (
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 transition-colors duration-200">
+          <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+            {category}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {technologies.map((tech) => (
+              <Badge label={tech} variant="default" />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

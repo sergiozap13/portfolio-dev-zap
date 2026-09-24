@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string;
+  variant?: "default" | "accent";
+}
+
+const { label, variant = "default" } = Astro.props;
+
+const variantClasses = {
+  default: "bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700",
+  accent: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-400 dark:border-emerald-500/20"
+};
+
+const classes = `inline-block px-3 py-1 text-sm font-medium rounded-md border ${variantClasses[variant]}`;
+---
+
+<span class={classes}>{label}</span>

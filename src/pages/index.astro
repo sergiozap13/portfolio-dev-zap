@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Hero from '../components/sections/Hero.astro';
+import Experience from '../components/sections/Experience.astro';
+import Projects from '../components/sections/Projects.astro';
+import TechStack from '../components/sections/TechStack.astro';
+import Education from '../components/sections/Education.astro';
+import Footer from '../components/layout/Footer.astro';
+---
+
+<BaseLayout>
+  <Header />
+  <main class="relative">
+    <div class="fixed top-0 -left-4 w-72 h-72 bg-emerald-300 opacity-20 mix-blend-multiply dark:bg-emerald-600/20 dark:opacity-100 dark:mix-blend-normal rounded-full blur-3xl animate-blob -z-1 pointer-events-none"></div>
+    <div class="fixed top-40 -right-4 w-96 h-96 bg-teal-300 opacity-20 mix-blend-multiply dark:bg-emerald-800/20 dark:opacity-100 dark:mix-blend-normal rounded-full blur-3xl animate-blob -z-1 pointer-events-none" style="animation-delay: 2s"></div>
+    <div class="fixed top-80 left-20 w-80 h-80 bg-emerald-400 opacity-15 mix-blend-multiply dark:bg-emerald-500/15 dark:opacity-100 dark:mix-blend-normal rounded-full blur-3xl animate-blob -z-1 pointer-events-none" style="animation-delay: 4s"></div>
+
+    <Hero />
+    <Experience />
+    <Projects />
+    <TechStack />
+    <Education />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Sergio Zapata - Ingeniero de Software",
+  description = "Portfolio de Sergio Zapata de la Hoz, Ingeniero de Software y Analista Técnico"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-200 overflow-x-hidden">
+    <slot />
+  </body>
+  <script>
+    const theme = localStorage.getItem('theme');
+    const html = document.documentElement;
+    const desktopToggle = document.getElementById('theme-toggle') as HTMLInputElement;
+    const mobileToggle = document.getElementById('theme-toggle-mobile') as HTMLInputElement;
+    
+    if (theme === 'light') {
+      html.classList.remove('dark');
+      if (desktopToggle) desktopToggle.checked = false;
+      if (mobileToggle) mobileToggle.checked = false;
+    } else {
+      html.classList.add('dark');
+      if (desktopToggle) desktopToggle.checked = true;
+      if (mobileToggle) mobileToggle.checked = true;
+    }
+    
+    const syncToggles = (isDark: boolean) => {
+      if (isDark) {
+        html.classList.add('dark');
+        if (desktopToggle) desktopToggle.checked = true;
+        if (mobileToggle) mobileToggle.checked = true;
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.remove('dark');
+        if (desktopToggle) desktopToggle.checked = false;
+        if (mobileToggle) mobileToggle.checked = false;
+        localStorage.setItem('theme', 'light');
+      }
+    };
+    
+    desktopToggle?.addEventListener('change', (e) => {
+      syncToggles((e.target as HTMLInputElement).checked);
+    });
+    
+    mobileToggle?.addEventListener('change', (e) => {
+      syncToggles((e.target as HTMLInputElement).checked);
+    });
+  </script>
+</html>
