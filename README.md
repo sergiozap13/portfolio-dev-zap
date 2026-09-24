@@ -1,43 +1,86 @@
-# Astro Starter Kit: Minimal
+# Portfolio Personal - Sergio Zapata
 
-```sh
-npm create astro@latest -- --template minimal
+Portfolio personal desarrollado con Astro y Tailwind CSS. Diseño minimalista con estética "Hacker/Tech Clean", dark/light mode, y optimizado para máximo rendimiento.
+
+## 🚀 Stack Tecnológico
+
+- **Framework:** Astro v7 (Zero JS por defecto)
+- **Estilos:** Tailwind CSS v4
+- **Iconos:** astro-icon (Simple Icons + Heroicons)
+- **Tipado:** TypeScript estricto
+
+## 📦 Instalación
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Comandos
 
-## 🚀 Project Structure
+| Comando | Acción |
+| :------------------------ | :----------------------------------------------- |
+| `npm run dev` | Inicia servidor de desarrollo en `localhost:4321` |
+| `npm run build` | Genera build de producción en `./dist/` |
+| `npm run preview` | Previsualiza el build localmente |
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Estructura del Proyecto
 
 ```text
 /
-├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/
+│   │   ├── layout/          # Header, Footer
+│   │   ├── sections/        # Hero, Experience, Projects, TechStack, Education
+│   │   └── ui/              # Button, Badge, SectionTitle
+│   ├── content/
+│   │   └── data.ts          # Contenido tipado (perfil, experiencia, proyectos)
+│   ├── layouts/
+│   │   └── BaseLayout.astro # Layout base con toggle dark/light
+│   ├── pages/
+│   │   └── index.astro      # Single page principal
+│   └── styles/
+│       └── global.css       # Estilos globales y animaciones
+├── public/
+│   └── CV_Sergio_Zapata.pdf # CV descargable
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ✨ Características
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Zero JavaScript innecesario** - Solo ~15 líneas de JS para toggle dark/light
+- **Dark/Light Mode** - Toggle manual con persistencia en localStorage
+- **Responsive Design** - Mobile-first con breakpoints de Tailwind
+- **Gradient Blobs** - Efecto visual ambiental con animaciones CSS puras
+- **Performance First** - Optimizado para 100/100 en Lighthouse
+- **SEO Ready** - Meta tags, JSON-LD, semántica HTML correcta
+- **Accesible** - Navegación por teclado, contraste adecuado, ARIA labels
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🎨 Paleta de Colores
 
-## 🧞 Commands
+### Dark Mode
+- Fondo: `bg-gray-950`, `bg-gray-900`
+- Acentos: `text-emerald-400`, `bg-emerald-500`
 
-All commands are run from the root of the project, from a terminal:
+### Light Mode
+- Fondo: `bg-gray-50`, `bg-white`
+- Acentos: `text-emerald-700`, `bg-emerald-600`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📄 Secciones
 
-## 👀 Want to learn more?
+1. **Hero** - Presentación profesional con CTAs (GitHub, LinkedIn, Email, CV)
+2. **Experience** - Timeline de 4 posiciones laborales
+3. **Projects** - Grid de proyectos destacados (SMFotos, ForgeHabits)
+4. **Tech Stack** - Tecnologías agrupadas por categorías
+5. **Education** - Formación académica
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🚀 Deploy
+
+El proyecto está desplegado en producción con Vercel
+
+```bash
+npm run build
+```
+
+## 📝 Licencia
+
+© 2026 Sergio Zapata. Todos los derechos reservados.
